@@ -27,3 +27,26 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+ # deploy:
+#    runs-on: windows-latest
+  #  needs: build
+
+#    steps:
+#      - name: Copy .jar to remote server
+  #      env:
+ #         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} # Clave privada almacenada como secreto
+  #        run: |
+  #          mkdir -p ~/.ssh
+   #         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  #          chmod 600 ~/.ssh/id_rsa
+    #        scp -o StrictHostKeyChecking=no target/*.jar <usuario>@<ip-o-dominio-servidor>:/ruta/remota/
+  
+      # Paso 5: Ejecutar el archivo .jar en el servidor remoto
+  #    - name: Run .jar on remote server
+  #      env:
+  #          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+   #     run: |
+    #        ssh -o StrictHostKeyChecking=no <usuario>@<ip-o-dominio-servidor> << EOF
+  #            cd /ruta/remota/
+    #          java -jar nombre-del-archivo.jar
+     #       EOF
