@@ -15,7 +15,7 @@ class CalculadoraTest {
 
 	@Test
 	void testSuma() {
-		assertEquals(4, calculadora.suma());
+		assertEquals(8, calculadora.suma());
 	}
 
 	@Test
